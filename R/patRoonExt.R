@@ -18,22 +18,23 @@ NULL
 #' @export
 getExtPath <- function(what, warn = TRUE)
 {
-    stopifnot(!is.logical(warn))
+    if (!is.logical(warn))
+        stop("warn must be a logical value.", call. = FALSE)
 
+    sys <- Sys.info()[["sysname"]]
+    
     path <- if (what == "openms")
         file.path("openms", "bin")
-    else if (what == "sirius")
+    else if (what == "sirius" && sys %in% c("Windows", "Linux", "Darwin"))
     {
         # The SIRIUS zip directory structure is different for each OS.
-        # - For Windows: the binary is in sirius/
-        # - For Linux: the binary is in sirius/bin
-        # - For MacOS??
-        # UNDONE: support MacOS? Otherwise remove from install script
         # UNDONE: More properly document how SIRIUS should be configured on Linux/MacOS? Or should patRoon option always
         # point to SIRIUS dir and figure it out?
-        switch(Sys.info()[["sysname"]], Windows = "sirius", Linux = file.path("sirius", "bin"), "sirius")
+        switch(sys,
+               Windows = "sirius",
+               Linux = file.path("sirius", "bin"),
+               Darwin = file.path("sirius.app", "Contents", "MacOS"))
     }
-
     else if (what == "openbabel")
         "openbabel"
     else if (what == "metfragcl")

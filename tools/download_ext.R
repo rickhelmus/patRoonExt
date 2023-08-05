@@ -43,6 +43,14 @@ for (ext in names(downloads))
     }
 }
 
+if (Sys.info()[["sysname"]] == "Darwin")
+{
+    # Finalize SIRIUS on macOS: make sure the executable bits are set
+    Sys.chmod(c(file.path(destPath, "sirius.app", "Contents", "MacOS", "sirius"),
+                file.path(destPath, "sirius.app", "Contents", "runtime", "Contents", "Home", "bin", "java")),
+              mode = "0744")
+}
+
 # Finalize BioTransformer: normalize subdirectory (random within downloaded .zip) and place in Jar
 BTDir <- list.files(destPath, pattern = "^djoumbou\\-biotransformer\\-[[:alnum:]]+$", full.names = TRUE)
 if (length(BTDir) == 1)
