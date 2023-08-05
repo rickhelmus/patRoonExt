@@ -1,0 +1,8 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^tools/bundle-ob.R$
+^tools/bundle-oms.R$
+^LICENSE$
+^README.md$
+^\.gitignore$
+^inst$
