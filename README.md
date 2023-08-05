@@ -1,7 +1,7 @@
 # patRoonExt
 
 This [R] package bundles several (non R-based) software tools and data files that are commonly used in [patRoon]
-workflows. Currently, the following is provided:
+workflows. Currently, the following are provided:
 
 What                 |  License                                   | Installation type      | OS
 -------------------- | ------------------------------------------ | ---------------------- | ---------------------
