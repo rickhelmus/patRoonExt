@@ -1,5 +1,11 @@
 source("utils.R")
 
+skipMsg <- function(what, var)
+{
+    cat(sprintf("NOTE: Skipping installation of '%s' because '%s' was set.\n", what, var))
+    invisible()
+}
+
 downloads <- list(
     SIRIUS = list(
         url = sprintf("https://github.com/boecker-lab/sirius/releases/download/v5.6.3/sirius-5.6.3-%s64-headless.zip",
@@ -41,9 +47,13 @@ dir.create(destPath, recursive = TRUE, showWarnings = FALSE)
 
 for (ext in names(downloads))
 {
-    if (nzchar(Sys.getenv(paste0("PATROONEXT_NO_", downloads[[ext]]$exclude))))
+    skipVar <- paste0("PATROONEXT_NO_", downloads[[ext]]$exclude)
+    if (nzchar(Sys.getenv(skipVar)))
+    {
+        skipMsg(ext, skipVar)
         next
-    
+    }
+
     p <- file.path(destPath, downloads[[ext]]$dest)
     if (downloadFile(ext, downloads[[ext]]$url, p))
     {
@@ -74,6 +84,10 @@ if (Sys.info()[["sysname"]] == "Windows")
 {
     if (!nzchar(Sys.getenv("PATROONEXT_NO_OPENBABEL")))
         unzipFile("openbabel.zip", file.path(destPath, "openbabel"))
+    else
+        skipMsg("OpenBabel", "PATROONEXT_NO_OPENBABEL")
     if (!nzchar(Sys.getenv("PATROONEXT_NO_OPENMS")))
         unzipFile("openms.zip", file.path(destPath, "openms"))
+    else
+        skipMsg("OpenMS", "PATROONEXT_NO_OPENMS")
 }

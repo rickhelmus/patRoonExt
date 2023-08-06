@@ -22,7 +22,7 @@ getExtPath <- function(what, warn = TRUE)
         stop("warn must be a logical value.", call. = FALSE)
 
     sys <- Sys.info()[["sysname"]]
-    
+
     path <- if (what == "openms")
         file.path("openms", "bin")
     else if (what == "sirius" && sys %in% c("Windows", "Linux", "Darwin"))
@@ -64,4 +64,14 @@ getExtPath <- function(what, warn = TRUE)
     }
 
     return(path)
+}
+
+.onAttach <- function(libname, pkgname)
+{
+    packageStartupMessage(
+        sprintf("Welcome to %s %s! ", pkgname, utils::packageVersion(pkgname)),
+        "This package bundles several software tools and data files. ",
+        "Please properly cite these and inform yourself about their respective licenses. ",
+        "See https://github.com/rickhelmus/patRoonExt for more details."
+    )
 }
