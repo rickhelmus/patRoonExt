@@ -14,12 +14,13 @@ extractNSIS(dlFile, extrDir)
 
 # copy files of interest
 copyFiles <- c(
-    "bin/FeatureFinderMetabo.exe",
-    "bin/FileConverter.exe",
-    "bin/MetaboliteAdductDecharger.exe",
-    "bin/MapAlignerPoseClustering.exe",
-    "bin/FeatureLinkerUnlabeled.exe",
-    "bin/FeatureLinkerUnlabeledQT.exe",
+    file.path("bin", "FeatureFinderMetabo.exe"),
+    file.path("bin", "FileConverter.exe"),
+    file.path("bin", "MetaboliteAdductDecharger.exe"),
+    file.path("bin", "MapAlignerPoseClustering.exe"),
+    file.path("bin", "FeatureLinkerUnlabeled.exe"),
+    file.path("bin", "FeatureLinkerUnlabeledQT.exe"),
+    file.path("share", "OpenMS", "CHEMISTRY", "unimod.xml"),
     Sys.glob(file.path(extrDir, "bin", "*.dll")), # UNDONE: probably not all are needed
     Sys.glob(file.path(extrDir, "share", "OpenMS", "CHEMISTRY", "Metabolite*")), # UNDONE: needed?
     Sys.glob(file.path(extrDir, "share", "OpenMS", "CHEMISTRY", "*Adducts*")), # UNDONE: needed?
