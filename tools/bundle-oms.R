@@ -25,8 +25,12 @@ copyFiles <- c(
     Sys.glob(file.path(extrDir, "share", "OpenMS", "CHEMISTRY", "Metabolite*")), # UNDONE: needed?
     Sys.glob(file.path(extrDir, "share", "OpenMS", "CHEMISTRY", "*Adducts*")), # UNDONE: needed?
     Sys.glob(file.path(extrDir, "share", "OpenMS", "SCHEMAS", "*")), # UNDONE: needed?
-    Sys.glob(file.path(extrDir, "share", "OpenMS", "XSL", "*")) # UNDONE: needed?
+    Sys.glob(file.path(extrDir, "share", "OpenMS", "XSL", "*")), # UNDONE: needed?
+    Sys.glob(file.path(extrDir, "share", "OpenMS", "CV", "*")),
+    Sys.glob(file.path(extrDir, "share", "OpenMS", "MAPPING", "*"))
 )
+copyFiles <- gsub("\\", "/", copyFiles, fixed = TRUE)
+extrDir <- gsub("\\", "/", extrDir, fixed = TRUE)
 copyFiles <- sub(paste0("^", extrDir, "/"), "", copyFiles) # make globs relative paths
 allSubDirs <- unique(sapply(copyFiles, function(cf) sub(basename(cf), "", cf)))
 selDir <- tempfile("oms-sel")
