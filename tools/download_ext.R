@@ -12,32 +12,41 @@ downloads <- list(
                       switch(Sys.info()[["sysname"]], Windows = "win", Linux = "linux", Darwin = "osx")),
         dest = "sirius.zip",
         destUnZip = ".",
+        sha256 = switch(Sys.info()[["sysname"]],
+                        Windows = "aab8357b8e5b96ce7c085f1a5a973a671d777f6b1242bb5acaeba1d456265bdb",
+                        Linux = "d2863315e7c335c892b4475ac802555d39132c68476c65aaa04940412fa5a879",
+                        Darwin = "52b04161cab03858a75d1c232ebbab962f75b81245df77cd995abc1c21e13166"),
         exclude = "SIRIUS"
     ),
     MetFrag = list(
         url = "https://github.com/ipb-halle/MetFragRelaunched/releases/download/v.2.5.0/MetFragCommandLine-2.5.0.jar",
         dest = "MetFragCommandLine.jar",
+        sha256 = "515edf1c6026bb99691b3c7b13503e31061087d1ca586fe361bcbc4ecad9b596",
         exclude = "METFRAGCL"
     ),
     CompTox = list(
         url = "https://zenodo.org/record/3472781/files/CompTox_07March19_WWMetaData.csv",
         dest = "CompToxWW.csv",
+        sha256 = "3ec40cecac73ee15faf3eb76a019958377babace55ca713802b2ae2ab21e0e5b",
         exclude = "METFRAGCT"
     ),
     PubChemLite = list(
         url = "https://zenodo.org/record/8191746/files/PubChemLite_exposomics_20230728.csv",
         dest = "PubChemLite.csv",
+        sha256 = "6ab8217be04502814e398365a72b470485e303c7153848d5ff92d07c220ce6e1",
         exclude = "METFRAGPCL"
     ),
     BioTransformerFiles = list(
         url = "https://bitbucket.org/djoumbou/biotransformer/get/master.zip",
         dest = "biotransformer_files.zip",
         destUnZip = ".",
+        sha256 = "89b840d1bb62aef53635bd17b5a963bb7d9fb1923bbeb05b73381903f50a8bc4",
         exclude = "BIOTRANSFORMER"
     ),
     BioTransformerJar = list(
         url = "https://github.com/rickhelmus/patRoonDeps/raw/master/ext/biotransformer-3.0.0.jar",
         dest = "biotransformer-3.0.0.jar",
+        sha256 = "41a0288cfde46ee24a74880d48a0b94f07df9b9aa4f21d1a5376567ebce17e48",
         exclude = "BIOTRANSFORMER"
     )
 )
@@ -55,11 +64,13 @@ for (ext in names(downloads))
     }
 
     p <- file.path(destPath, downloads[[ext]]$dest)
-    if (downloadFile(ext, downloads[[ext]]$url, p))
+    if (downloadFile(ext, downloads[[ext]]$url, p, downloads[[ext]]$sha256))
     {
         if (!is.null(downloads[[ext]][["destUnZip"]]))
             unzipFile(p, file.path(destPath, downloads[[ext]]$destUnZip), clear = TRUE)
     }
+    else
+        stop("Download failed, aborting...", call. = FALSE)
 }
 
 if (Sys.info()[["sysname"]] == "Darwin")

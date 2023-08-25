@@ -1,4 +1,4 @@
-downloadFile <- function(what, url, dest)
+downloadFile <- function(what, url, dest, sha256 = NULL)
 {
     cachePath <- Sys.getenv("PATROONEXT_CACHE")
     if (nzchar(cachePath))
@@ -6,6 +6,8 @@ downloadFile <- function(what, url, dest)
         cp <- file.path(cachePath, basename(dest))
         if (file.exists(cp))
         {
+            if (!is.null(sha256) && sha256 != digest::digest(file = cp, algo = "sha256"))
+                warning(sprintf("Ignoring cached file for %s as checksums are different", what), call. = FALSE)
             file.copy(cp, dest)
             return(TRUE)
         }
@@ -18,7 +20,13 @@ downloadFile <- function(what, url, dest)
 
     if (download.file(url, dest, mode = "wb") != 0)
     {
-        warning(sprintf("Failed to download %s from '%s'", what, url))
+        warning(sprintf("Failed to download %s from '%s'", what, url), call. = FALSE)
+        return(FALSE)
+    }
+    
+    if (!is.null(sha256) && sha256 != digest::digest(file = dest, algo = "sha256"))
+    {
+        warning(sprintf("Failed to download %s: sha256 checksums differ", what, url), call. = FALSE)
         return(FALSE)
     }
 
@@ -29,6 +37,16 @@ downloadFile <- function(what, url, dest)
     }
 
     return(TRUE)
+}
+
+# to update checksums in downloads table of download_ext.R
+getChecksums <- function(dls)
+{
+    cacheDir <- Sys.getenv("PATROONEXT_CACHE")
+    if (!nzchar(cacheDir))
+        stop("Please set PATROONEXT_CACHE", call. = FALSE)
+    for (f in list.files(cacheDir, full.names = TRUE))
+        cat(sprintf("sha256 of %s: %s\n", f, digest::digest(file = f, algo = "sha256")))
 }
 
 unzipFile <- function(file, dest, what, clear = FALSE)
