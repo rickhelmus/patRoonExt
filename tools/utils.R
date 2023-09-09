@@ -8,8 +8,11 @@ downloadFile <- function(what, url, dest, sha256 = NULL)
         {
             if (!is.null(sha256) && sha256 != digest::digest(file = cp, algo = "sha256"))
                 warning(sprintf("Ignoring cached file for %s as checksums are different", what), call. = FALSE)
-            file.copy(cp, dest)
-            return(TRUE)
+            else
+            {
+                file.copy(cp, dest)
+                return(TRUE)
+            }
         }
     }
 
@@ -23,7 +26,7 @@ downloadFile <- function(what, url, dest, sha256 = NULL)
         warning(sprintf("Failed to download %s from '%s'", what, url), call. = FALSE)
         return(FALSE)
     }
-    
+
     if (!is.null(sha256) && sha256 != digest::digest(file = dest, algo = "sha256"))
     {
         warning(sprintf("Failed to download %s: sha256 checksums differ", what, url), call. = FALSE)

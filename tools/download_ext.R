@@ -8,14 +8,14 @@ skipMsg <- function(what, var)
 
 downloads <- list(
     SIRIUS = list(
-        url = sprintf("https://github.com/boecker-lab/sirius/releases/download/v5.6.3/sirius-5.6.3-%s64-headless.zip",
+        url = sprintf("https://github.com/boecker-lab/sirius/releases/download/v5.8.2/sirius-5.8.2-%s64.zip",
                       switch(Sys.info()[["sysname"]], Windows = "win", Linux = "linux", Darwin = "osx")),
         dest = "sirius.zip",
         destUnZip = ".",
         sha256 = switch(Sys.info()[["sysname"]],
-                        Windows = "aab8357b8e5b96ce7c085f1a5a973a671d777f6b1242bb5acaeba1d456265bdb",
-                        Linux = "d2863315e7c335c892b4475ac802555d39132c68476c65aaa04940412fa5a879",
-                        Darwin = "52b04161cab03858a75d1c232ebbab962f75b81245df77cd995abc1c21e13166"),
+                        Windows = "6c06221d671fa0a387c833bf4c0afc16dc3fff3067bd87914945e590427a2aaf",
+                        Linux = "f83ad942a4de8c853df9588342c5ada0d6df828c532d5d168d71277d95c53c4e",
+                        Darwin = "a5480fe74946addf89affc7a977734bb0b5c6deaa6d95f9a23dcaabe138b5c01"),
         exclude = "SIRIUS"
     ),
     MetFrag = list(
@@ -73,7 +73,13 @@ for (ext in names(downloads))
         stop("Download failed, aborting...", call. = FALSE)
 }
 
-if (Sys.info()[["sysname"]] == "Darwin")
+if (Sys.info()[["sysname"]] == "Linux")
+{
+    # Finalize SIRIUS on Linux: make sure the executable bits are set
+    Sys.chmod(c(file.path(destPath, "sirius", "bin", "sirius"),
+                file.path(destPath, "sirius", "lib", "runtime", "bin", "java")),
+              mode = "0744")
+} else if (Sys.info()[["sysname"]] == "Darwin")
 {
     # Finalize SIRIUS on macOS: make sure the executable bits are set
     Sys.chmod(c(file.path(destPath, "sirius.app", "Contents", "MacOS", "sirius"),
