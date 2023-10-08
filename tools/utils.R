@@ -18,7 +18,7 @@ downloadFile <- function(what, url, dest, sha256 = NULL)
 
     # increase timeout for large files, thanks to https://stackoverflow.com/a/68944877
     otimeout <- getOption("timeout")
-    options(timeout = max(600, otimeout))
+    options(timeout = max(900, otimeout))
     on.exit(options(timeout = otimeout), add = TRUE)
 
     if (download.file(url, dest, mode = "wb") != 0)
@@ -36,7 +36,7 @@ downloadFile <- function(what, url, dest, sha256 = NULL)
     if (nzchar(cachePath))
     {
         dir.create(cachePath, recursive = TRUE, showWarnings = FALSE)
-        file.copy(dest, cachePath)
+        file.copy(dest, cachePath, overwrite = TRUE)
     }
 
     return(TRUE)
