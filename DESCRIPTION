@@ -4,6 +4,8 @@ Title: External Dependencies for patRoon
 Version: 1.0.0
 Author: Rick Helmus
 Description: This package bundles several tools and data files that may be of use in patRoon workflows.
+Imports:
+    digest
 Suggests:
     patRoon
 License: GPL-3
