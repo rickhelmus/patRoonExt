@@ -42,12 +42,6 @@ downloads <- list(
         destUnZip = ".",
         sha256 = "89b840d1bb62aef53635bd17b5a963bb7d9fb1923bbeb05b73381903f50a8bc4",
         exclude = "BIOTRANSFORMER"
-    ),
-    BioTransformerJar = list(
-        url = "https://github.com/rickhelmus/patRoonDeps/raw/master/ext/biotransformer-3.0.0.jar",
-        dest = "biotransformer-3.0.0.jar",
-        sha256 = "41a0288cfde46ee24a74880d48a0b94f07df9b9aa4f21d1a5376567ebce17e48",
-        exclude = "BIOTRANSFORMER"
     )
 )
 
@@ -92,8 +86,7 @@ BTDir <- list.files(destPath, pattern = "^djoumbou\\-biotransformer\\-[[:alnum:]
 if (length(BTDir) == 1)
 {
     file.rename(BTDir, file.path(destPath, "biotransformer"))
-    file.rename(file.path(destPath, downloads$BioTransformerJar$dest),
-                file.path(destPath, "biotransformer", downloads$BioTransformerJar$dest))
+    file.copy("biotransformer-3.0.0.jar", file.path(destPath, "biotransformer"))
 }
 
 # Install OpenBabel/OpenMS on Windows
