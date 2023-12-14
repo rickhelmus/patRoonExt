@@ -29,7 +29,7 @@ downloadFile <- function(what, url, dest, sha256 = NULL)
 
     if (!is.null(sha256) && sha256 != digest::digest(file = dest, algo = "sha256"))
     {
-        warning(sprintf("Failed to download %s: sha256 checksums differ", what, url), call. = FALSE)
+        warning(sprintf("Failed to download %s from '%s': sha256 checksums differ", what, url), call. = FALSE)
         return(FALSE)
     }
 
