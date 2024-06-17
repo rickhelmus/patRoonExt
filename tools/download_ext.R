@@ -25,13 +25,13 @@ downloads <- list(
         exclude = "METFRAGCL"
     ),
     CompTox = list(
-        url = "https://zenodo.org/record/3472781/files/CompTox_07March19_WWMetaData.csv",
+        url = "https://zenodo.org/records/3472781/files/CompTox_07March19_WWMetaData.csv",
         dest = "CompToxWW.csv",
         sha256 = "3ec40cecac73ee15faf3eb76a019958377babace55ca713802b2ae2ab21e0e5b",
         exclude = "METFRAGCT"
     ),
     PubChemLite = list(
-        url = "https://zenodo.org/record/8191746/files/PubChemLite_exposomics_20230728.csv",
+        url = "https://zenodo.org/records/8191746/files/PubChemLite_exposomics_20230728.csv",
         dest = "PubChemLite.csv",
         sha256 = "6ab8217be04502814e398365a72b470485e303c7153848d5ff92d07c220ce6e1",
         exclude = "METFRAGPCL"
