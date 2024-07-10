@@ -15,5 +15,9 @@ extractNSIS(dlFile, extrDir)
 # remove unnecessary files
 unlink(file.path(extrDir, c("$*", "vc_redist.x64.exe", "vc_redist.x86.exe", "Uninstall.exe")), recursive = TRUE)
 
+# copy some MSVC dlls from OpenMS that are normally installed by the OpenBabel installer
+cpDlls <- file.path("bin", c("msvcp140.dll", "vcruntime140.dll", "vcruntime140_1.dll"))
+unzip(file.path(pkgPath, "tools", "openms.zip"), files = cpDlls, exdir = extrDir, junkpaths = TRUE)
+
 # generate final zip
 zipFile(extrDir, file.path(file.path(pkgPath, "tools", "openbabel.zip")))
