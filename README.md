@@ -3,15 +3,15 @@
 This [R] package bundles several (non R-based) software tools and data files that are commonly used in [patRoon]
 workflows. Currently, the following are provided:
 
-What                 |  License                                   | Installation type      | OS
--------------------- | ------------------------------------------ | ---------------------- | ---------------------
-[OpenMS]             | BSD-3                                      | Bundled (stripped)     | Windows (x86-64)
-[SIRIUS]             | SIRIUS: AGPL-3 <br> CSI:FingerID: free for academic research/education | Download | Windows, Linux, macOS
-[MetFrag command line](MetFragCL) | LGPL-2.1                      | Download               | All
-[MetFrag CompTox WW database](MetFragCT) | CC BY 4.0              | Download               | All
-[MetFrag PubChemLite database](MetFragPCL) | CC BY 4.0            | Download               | All
-[OpenBabel]          | GPL-2                                      | Bundled                | Windows (x86-64)
-[BioTransformer]     | BioTransformer: LGPL-3 <br> enviPath module: CC BY-NC 4.0 | Download | All
+What                     |  License                                   | Installation type      | OS
+------------------------ | ------------------------------------------ | ---------------------- | ---------------------
+[OpenMS] (3.0.0)         | BSD-3                                      | Bundled (stripped)     | Windows (x86-64)
+[SIRIUS] (5.8.2)         | SIRIUS: AGPL-3 <br> CSI:FingerID: free for academic research/education | Download | Windows, Linux, macOS
+[MetFrag command line](MetFragCL) (2.6.1) | LGPL-2.1                      | Download               | All
+[MetFrag CompTox WW database](MetFragCT) (07March19_WWMetaData) | CC BY 4.0              | Download               | All
+[MetFrag PubChemLite database](MetFragPCL) (20250131) | CC BY 4.0            | Download               | All
+[OpenBabel] (3.1.1)      | GPL-2                                      | Bundled                | Windows (x86-64)
+[BioTransformer] (3.0.0) | BioTransformer: LGPL-3 <br> enviPath module: CC BY-NC 4.0 | Download | All
 
 > **IMPORTANT** Please inform yourself about the license requirements of these software tools and data files prior to installing `patRoonExt`. Furthermore, please make sure to properly cite the work of the involved authors if you use their tools/data via patRoon. You can find more information on the respective websites linked in the table.
 
