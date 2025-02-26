@@ -19,9 +19,9 @@ downloads <- list(
         exclude = "SIRIUS"
     ),
     MetFrag = list(
-        url = "https://github.com/ipb-halle/MetFragRelaunched/releases/download/v.2.5.0/MetFragCommandLine-2.5.0.jar",
+        url = "https://github.com/ipb-halle/MetFragRelaunched/releases/download/v2.6.1/MetFragCommandLine-2.6.1.jar",
         dest = "MetFragCommandLine.jar",
-        sha256 = "515edf1c6026bb99691b3c7b13503e31061087d1ca586fe361bcbc4ecad9b596",
+        sha256 = "4df2e2d23996ede0f03d8c0f02defcdf975249fcfe58193997358a7778afc616",
         exclude = "METFRAGCL"
     ),
     CompTox = list(
@@ -31,9 +31,9 @@ downloads <- list(
         exclude = "METFRAGCT"
     ),
     PubChemLite = list(
-        url = "https://zenodo.org/records/8191746/files/PubChemLite_exposomics_20230728.csv",
+        url = "https://zenodo.org/records/14781118/files/PubChemLite_exposomics_20250131.csv",
         dest = "PubChemLite.csv",
-        sha256 = "6ab8217be04502814e398365a72b470485e303c7153848d5ff92d07c220ce6e1",
+        sha256 = "6e7e5f1d3fcbd467396231cbea73b2c16fcae61fcafb89c501bc9196ffa21f37",
         exclude = "METFRAGPCL"
     ),
     BioTransformerFiles = list(
