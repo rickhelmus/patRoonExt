@@ -19,9 +19,9 @@ downloads <- list(
         exclude = "SIRIUS"
     ),
     MetFrag = list(
-        url = "https://github.com/ipb-halle/MetFragRelaunched/releases/download/v2.6.0/MetFragCommandLine-2.6.0.jar",
+        url = "https://github.com/ipb-halle/MetFragRelaunched/releases/download/v2.6.3/MetFragCommandLine-2.6.3.jar",
         dest = "MetFragCommandLine.jar",
-        sha256 = "0198c1d14f408c8c69869bf0d98d6b587ebcc570bf2b596d987d5d6ae76f9b9b",
+        sha256 = "339011a53b19a5065fbecd3c9bd5915b3ade4636a0e66f4faace8db13dd666ad",
         exclude = "METFRAGCL"
     ),
     CompTox = list(

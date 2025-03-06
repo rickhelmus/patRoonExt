@@ -7,7 +7,7 @@ What                     |  License                                   | Installa
 ------------------------ | ------------------------------------------ | ---------------------- | ---------------------
 [OpenMS] (3.0.0)         | BSD-3                                      | Bundled (stripped)     | Windows (x86-64)
 [SIRIUS] (5.8.2)         | SIRIUS: AGPL-3 <br> CSI:FingerID: free for academic research/education | Download | Windows, Linux, macOS
-[MetFrag command line](MetFragCL) (2.6.0) | LGPL-2.1                      | Download               | All
+[MetFrag command line](MetFragCL) (2.6.3) | LGPL-2.1                      | Download               | All
 [MetFrag CompTox WW database](MetFragCT) (07March19_WWMetaData) | CC BY 4.0              | Download               | All
 [MetFrag PubChemLite database](MetFragPCL) (20250131) | CC BY 4.0            | Download               | All
 [OpenBabel] (3.1.1)      | GPL-2                                      | Bundled                | Windows (x86-64)
