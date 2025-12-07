@@ -4,5 +4,6 @@
 ^tools/bundle-oms.R$
 ^LICENSE$
 ^README.md$
+^README.Rmd$
 ^\.gitignore$
 ^inst$
