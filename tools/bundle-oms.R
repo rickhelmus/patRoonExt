@@ -5,7 +5,7 @@ source(file.path(pkgPath, "tools", "utils.R"))
 # download
 dlFile <- file.path(tempdir(), "openms.exe") # use a fixed file name so it can be cached by downloadFile
 stopifnot(downloadFile("OpenMS",
-                       "https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/3.0.0/OpenMS-3.0.0-Win64.exe",
+                       "https://github.com/OpenMS/OpenMS/releases/download/release%2F3.4.1/OpenMS-3.4.1-Win64.exe",
                        dlFile))
 
 # extract
@@ -20,6 +20,7 @@ copyFiles <- c(
     file.path("bin", "MapAlignerPoseClustering.exe"),
     file.path("bin", "FeatureLinkerUnlabeled.exe"),
     file.path("bin", "FeatureLinkerUnlabeledQT.exe"),
+    file.path("bin", "MRMTransitionGroupPicker.exe"),
     file.path("share", "OpenMS", "CHEMISTRY", "unimod.xml"),
     Sys.glob(file.path(extrDir, "bin", "*.dll")), # UNDONE: probably not all are needed
     Sys.glob(file.path(extrDir, "share", "OpenMS", "CHEMISTRY", "Metabolite*")), # UNDONE: needed?
