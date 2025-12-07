@@ -3,13 +3,16 @@
 \name{patRoonExt}
 \alias{patRoonExt}
 \alias{getExtPath}
+\alias{about}
 \title{External dependencies for patRoon}
 \usage{
 getExtPath(what, warn = TRUE)
+
+about()
 }
 \arguments{
 \item{what}{The tool/data file to query, currently supported are \code{openms}, \code{sirius}, \code{openbabel}, \code{metfragcl},
-\code{metfragct}, \code{metfragpcl}, \code{biotransformer}.}
+\code{metfragct}, \code{metfragpcl}, \code{biotransformer}, \code{tims-sdk}.}
 
 \item{warn}{Throw a warning when the queried tool/file could not be found.}
 }

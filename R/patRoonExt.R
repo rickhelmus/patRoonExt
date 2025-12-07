@@ -12,7 +12,7 @@ NULL
 
 #' @details The `getExtPath` function returns the path to a bundled tool or data file.
 #' @param what The tool/data file to query, currently supported are `openms`, `sirius`, `openbabel`, `metfragcl`,
-#'   `metfragct`, `metfragpcl`, `biotransformer`.
+#'   `metfragct`, `metfragpcl`, `biotransformer`, `tims-sdk`.
 #' @param warn Throw a warning when the queried tool/file could not be found.
 #' @rdname patRoonExt
 #' @export
@@ -45,6 +45,15 @@ getExtPath <- function(what, warn = TRUE)
         "PubChemLite.csv"
     else if (what == "biotransformer")
         "biotransformer/biotransformer-3.0.0.jar"
+    else if (what == "tdf-sdk")
+    {
+        if (sys == "Windows")
+            "tdf-sdk/win64/timsdata.dll"
+        else if (sys == "Linux")
+            "tdf-sdk/linux64/libtimsdata.so"
+        else
+            NULL
+    }
     else
     {
         if (warn)
@@ -66,12 +75,25 @@ getExtPath <- function(what, warn = TRUE)
     return(path)
 }
 
+#' Show information about bundled external dependencies
+#' @rdname patRoonExt
+about <- function()
+{
+    cat(
+        "This package bundles several software tools and data files. ",
+        "Please properly cite these and inform yourself about their respective licenses. ",
+        "See depInfo() and https://github.com/rickhelmus/patRoonExt for more details.",
+        "\n\nAdditionally, the following applies if the TDF-SDK is used (OpenTIMS msdata backend):\n ",
+        "Included software components:\n",
+        "Copyright © 2022 by Bruker Daltonics GmbH & Co. KG. All rights reserved.\n"
+    )
+}
+
 .onAttach <- function(libname, pkgname)
 {
     packageStartupMessage(
         sprintf("Welcome to %s %s! ", pkgname, utils::packageVersion(pkgname)),
-        "This package bundles several software tools and data files. ",
-        "Please properly cite these and inform yourself about their respective licenses. ",
-        "See https://github.com/rickhelmus/patRoonExt for more details."
+        paste0(capture.output(about()), collapse = "\n")
     )
 }
+

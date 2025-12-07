@@ -15,6 +15,7 @@ the following are provided:
 | <a href='https://zenodo.org/records/14781118/files/PubChemLite_exposomics_20250131.csv'>MetFrag PubChemLite database (2.6.3)</a> | CC BY 4.0 | Download | All |
 | <a href='https://github.com/openbabel/openbabel'>OpenBabel (3.1.1)</a> | GPL-2 | Bundled | Windows (x86-64) |
 | <a href='https://bitbucket.org/djoumbou/biotransformer/src/master/'>BioTransformer (3.0.0)</a> | BioTransformer: LGPL-3; enviPath module: CC BY-NC 4.0 | Download | All |
+| <a href='https://www.bruker.com/'>TDF SDK (3.3.6.2)</a> | Proprietary. Copyright © 2022 by Bruker Daltonics GmbH & Co. KG. All rights reserved | Bundled | Windows (x86-64), Linux (x86-64) |
 
 > **IMPORTANT** Please inform yourself about the license requirements of
 > these software tools and data files prior to installing `patRoonExt`.
@@ -50,6 +51,8 @@ disable the installation of a certain tool or data file:
 - `PATROONEXT_NO_METFRAGPCL` (PubChemLite DB)
 - `PATROONEXT_NO_OPENBABEL`
 - `PATROONEXT_NO_BIOTRANSFORMER`
+- `PATROONEXT_NO_TDFSDK` (used by the `patRoon` `OpenTIMS` `msdata`
+  backend)
 
 Furthermore, the `PATROONEXT_CACHE` variable can be set to a path where
 all downloaded files are stored, and retrieved if the file was already

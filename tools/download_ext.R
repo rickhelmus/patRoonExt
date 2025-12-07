@@ -31,9 +31,9 @@ downloads <- list(
         exclude = "METFRAGCT"
     ),
     PubChemLite = list(
-        url = "https://zenodo.org/records/14781118/files/PubChemLite_exposomics_20250131.csv",
+        url = "https://zenodo.org/records/17775114/files/PubChemLite_CCSbase_20251128.csv",
         dest = "PubChemLite.csv",
-        sha256 = "6e7e5f1d3fcbd467396231cbea73b2c16fcae61fcafb89c501bc9196ffa21f37",
+        sha256 = "94d2ac95ada0fc6383692c5eb45138a559332f0b81fe138c2d4e06943f0d5b18",
         exclude = "METFRAGPCL"
     ),
     BioTransformerFiles = list(
@@ -101,3 +101,11 @@ if (Sys.info()[["sysname"]] == "Windows")
     else
         skipMsg("OpenMS", "PATROONEXT_NO_OPENMS")
 }
+
+# Install TDF-SDK
+if (!nzchar(Sys.getenv("PATROONEXT_NO_TDFSDK")))
+{
+    file.copy("tdf-sdk", destPath, recursive = TRUE)
+} else
+    skipMsg("TDF-SDK", "PATROONEXT_NO_TDFSDK")
+

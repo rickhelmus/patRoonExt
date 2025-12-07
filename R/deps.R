@@ -64,6 +64,14 @@ depInfo <- function()
             installation = "Download",
             OS = "All",
             URL = "https://bitbucket.org/djoumbou/biotransformer/src/master/"
-        )        
+        ),
+        data.frame(
+            name = "TDF SDK",
+            version = "3.3.6.2",
+            license = "Proprietary. Copyright © 2022 by Bruker Daltonics GmbH & Co. KG. All rights reserved",
+            installation = "Bundled",
+            OS = "Windows (x86-64), Linux (x86-64)",
+            URL = "https://www.bruker.com/"
+        )
     ))
 }
