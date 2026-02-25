@@ -5,7 +5,7 @@ source(file.path(pkgPath, "tools", "utils.R"))
 # download
 dlFile <- file.path(tempdir(), "openms.exe") # use a fixed file name so it can be cached by downloadFile
 stopifnot(downloadFile("OpenMS",
-                       "https://github.com/OpenMS/OpenMS/releases/download/release%2F3.4.1/OpenMS-3.4.1-Win64.exe",
+                       "https://github.com/OpenMS/OpenMS/releases/download/release%2F3.5.0/OpenMS-3.5.0-Win64.exe",
                        dlFile))
 
 # extract

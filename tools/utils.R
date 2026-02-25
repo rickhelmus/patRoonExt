@@ -76,5 +76,5 @@ zipFile <- function(dir, dest)
 extractNSIS <- function(file, dest)
 {
     # assumes 7zip is in PATH
-    system2(if (Sys.info()["sysname"] == "Windows") "7z.exe" else "7zzs", c("x", file, paste0("-o", dest)))
+    system2(if (Sys.info()["sysname"] == "Windows") "7z.exe" else "7zzs", c("x", file, paste0("-o", dest), "-y"))
 }
