@@ -8,7 +8,7 @@ the following are provided:
 
 | name | license | installation | OS |
 |:---|:---|:---|:---|
-| <a href='https://openms.de/'>OpenMS (3.0.0)</a> | BSD-3 | Bundled (stripped) | Windows (x86-64) |
+| <a href='https://openms.de/'>OpenMS (3.5.0)</a> | BSD-3 | Bundled (stripped) | Windows (x86-64) |
 | <a href='https://bio.informatik.uni-jena.de/software/sirius/'>SIRIUS (5.8.2)</a> | SIRIUS: AGPL-3; CSI:FingerID: free for academic research/education | Download | Windows, Linux, macOS |
 | <a href='https://github.com/ipb-halle/MetFragRelaunched/releases/download/v2.6.3/MetFragCommandLine-2.6.3.jar'>MetFrag CLI (2.6.3)</a> | LGPL-2.1 | Download | All |
 | <a href='https://zenodo.org/records/3472781/files/CompTox_07March19_WWMetaData.csv'>MetFrag CompTox WW database (07March19_WWMetaData)</a> | CC BY 4.0 | Download | All |

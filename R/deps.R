@@ -11,7 +11,7 @@ depInfo <- function()
     do.call(rbind, list(
         data.frame(
             name = "OpenMS",
-            version = "3.0.0",
+            version = "3.5.0",
             license = "BSD-3",
             installation = "Bundled (stripped)",
             OS = "Windows (x86-64)",
