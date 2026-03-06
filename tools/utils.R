@@ -10,7 +10,9 @@ downloadFile <- function(what, url, dest, sha256 = NULL)
                 warning(sprintf("Ignoring cached file for %s as checksums are different", what), call. = FALSE)
             else
             {
-                file.copy(cp, dest)
+                cat(sprintf("Using cached file for %s from '%s'\n", what, cp))
+                if (!file.copy(cp, dest))
+                    stop(sprintf("Failed to copy cached file for %s from '%s' to '%s'", what, cp, dest), call. = FALSE)
                 return(TRUE)
             }
         }
@@ -52,12 +54,12 @@ getChecksums <- function(dls)
         cat(sprintf("sha256 of %s: %s\n", f, digest::digest(file = f, algo = "sha256")))
 }
 
-unzipFile <- function(file, dest, what, clear = FALSE)
+unzipFile <- function(file, dest, clear = FALSE)
 {
     unzip(file, exdir = dest)
     if (!file.exists(dest))
     {
-        warning(paste("Failed to extract %s to '%s'", what, dest))
+        warning(paste("Failed to extract '%s' to '%s'", file, dest))
         return(FALSE)
     }
     if (clear)
