@@ -12,7 +12,7 @@ the following are provided:
 | <a href='https://bio.informatik.uni-jena.de/software/sirius/'>SIRIUS (5.8.2)</a> | SIRIUS: AGPL-3; CSI:FingerID: free for academic research/education | Download | Windows, Linux, macOS |
 | <a href='https://github.com/ipb-halle/MetFragRelaunched/releases/download/v2.6.3/MetFragCommandLine-2.6.3.jar'>MetFrag CLI (2.6.3)</a> | LGPL-2.1 | Download | All |
 | <a href='https://zenodo.org/records/3472781/files/CompTox_07March19_WWMetaData.csv'>MetFrag CompTox WW database (07March19_WWMetaData)</a> | CC BY 4.0 | Download | All |
-| <a href='https://zenodo.org/records/14781118/files/PubChemLite_exposomics_20250131.csv'>MetFrag PubChemLite database (2.6.3)</a> | CC BY 4.0 | Download | All |
+| <a href='https://zenodo.org/records/19346260/files/PubChemLite_CCSbase_20260327.csv'>MetFrag PubChemLite-CCS database (20260327)</a> | CC BY 4.0 | Download | All |
 | <a href='https://github.com/openbabel/openbabel'>OpenBabel (3.1.1)</a> | GPL-2 | Bundled | Windows (x86-64) |
 | <a href='https://bitbucket.org/djoumbou/biotransformer/src/master/'>BioTransformer (3.0.0)</a> | BioTransformer: LGPL-3; enviPath module: CC BY-NC 4.0 | Download | All |
 | <a href='https://www.bruker.com/'>TDF SDK (3.3.6.2)</a> | Proprietary. Copyright © 2022 by Bruker Daltonics GmbH & Co. KG. All rights reserved | Bundled | Windows (x86-64), Linux (x86-64) |
@@ -51,7 +51,7 @@ disable the installation of a certain tool or data file:
 - `PATROONEXT_NO_METFRAGPCL` (PubChemLite DB)
 - `PATROONEXT_NO_OPENBABEL`
 - `PATROONEXT_NO_BIOTRANSFORMER`
-- `PATROONEXT_NO_TDFSDK` (used by the `patRoon` `OpenTIMS` `msdata`
+- `PATROONEXT_NO_TDFSDK` (used by the `patRoon` `opentims` `msdata`
   backend)
 
 Furthermore, the `PATROONEXT_CACHE` variable can be set to a path where

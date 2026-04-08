@@ -42,7 +42,7 @@ installation of a certain tool or data file:
 * `PATROONEXT_NO_METFRAGPCL` (PubChemLite DB)
 * `PATROONEXT_NO_OPENBABEL`
 * `PATROONEXT_NO_BIOTRANSFORMER`
-* `PATROONEXT_NO_TDFSDK` (used by the `patRoon` `OpenTIMS` `msdata` backend)
+* `PATROONEXT_NO_TDFSDK` (used by the `patRoon` `opentims` `msdata` backend)
 
 Furthermore, the `PATROONEXT_CACHE` variable can be set to a path where all downloaded files are stored, and retrieved
 if the file was already downloaded. This is primarily for debugging purposes, but can be useful if you want manually

@@ -42,12 +42,12 @@ depInfo <- function()
             URL = "https://zenodo.org/records/3472781/files/CompTox_07March19_WWMetaData.csv"
         ),
         data.frame(
-            name = "MetFrag PubChemLite database",
-            version = "2.6.3",
+            name = "MetFrag PubChemLite-CCS database",
+            version = "20260327",
             license = "CC BY 4.0",
             installation = "Download",
             OS = "All",
-            URL = "https://zenodo.org/records/14781118/files/PubChemLite_exposomics_20250131.csv"
+            URL = "https://zenodo.org/records/19346260/files/PubChemLite_CCSbase_20260327.csv"
         ),
         data.frame(
             name = "OpenBabel",

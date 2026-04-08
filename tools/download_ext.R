@@ -31,9 +31,9 @@ downloads <- list(
         exclude = "METFRAGCT"
     ),
     PubChemLite = list(
-        url = "https://zenodo.org/records/17775114/files/PubChemLite_CCSbase_20251128.csv",
+        url = "https://zenodo.org/records/19346260/files/PubChemLite_CCSbase_20260327.csv",
         dest = "PubChemLite.csv",
-        sha256 = "94d2ac95ada0fc6383692c5eb45138a559332f0b81fe138c2d4e06943f0d5b18",
+        sha256 = "cd4f3c7ded1a062e24d7a1ee229821b855446fb59573f337a185cec633d76c82",
         exclude = "METFRAGPCL"
     ),
     BioTransformerFiles = list(
