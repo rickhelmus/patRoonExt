@@ -6,16 +6,29 @@ skipMsg <- function(what, var)
     invisible()
 }
 
+SIRHashes <- list(
+    Windows = list(
+        x86_64 = "2c5c1930dfc933da77662abba102eb722ddc6226f43712962499c2e024242905",
+        arm64 = "noneyet"
+    ),
+    Linux = list(
+        x86_64 = "9556237eb8306f27dede2b7e3404952e02729a052b87fe942857bd26d20c9d63",
+        arm64 = "68f3f0d4ceade0aec05b25ce980aa0e9a4561c4962c60a8a92595a114a6d99e5"
+    ),
+    Darwin = list(
+        x86_64 = "fc25ba8e512c35e5fc434e7e92c5db83d85573a53f302fd4e991878b4537518d",
+        arm64 = "6aae01b91328931e1c66d6867003fcf81b69a01e67534ea4936a7e62feb33d71"
+    )
+)
+
 downloads <- list(
     SIRIUS = list(
-        url = sprintf("https://github.com/boecker-lab/sirius/releases/download/v5.8.2/sirius-5.8.2-%s64.zip",
-                      switch(Sys.info()[["sysname"]], Windows = "win", Linux = "linux", Darwin = "osx")),
+        url = sprintf("https://github.com/sirius-ms/sirius/releases/download/v6.5.4/sirius-6.5.4-%s-%s.zip",
+                      switch(Sys.info()[["sysname"]], Windows = "win", Linux = "linux", Darwin = "macos"),
+                      if (Sys.info()[["machine"]] == "x86_64") "x64" else Sys.info()[["machine"]]),
         dest = "sirius.zip",
         destUnZip = ".",
-        sha256 = switch(Sys.info()[["sysname"]],
-                        Windows = "6c06221d671fa0a387c833bf4c0afc16dc3fff3067bd87914945e590427a2aaf",
-                        Linux = "f83ad942a4de8c853df9588342c5ada0d6df828c532d5d168d71277d95c53c4e",
-                        Darwin = "a5480fe74946addf89affc7a977734bb0b5c6deaa6d95f9a23dcaabe138b5c01"),
+        sha256 = SIRHashes[[Sys.info()[["sysname"]]]][[Sys.info()[["machine"]]]],
         exclude = "SIRIUS"
     ),
     MetFrag = list(

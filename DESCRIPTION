@@ -15,5 +15,5 @@ LazyData: true
 URL: https://github.com/rickhelmus/patRoonExt
 BugReports: https://github.com/rickhelmus/patRoonExt/issues
 Depends: R (>= 4.0)
-RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.0.0
