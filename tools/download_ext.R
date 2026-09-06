@@ -40,7 +40,7 @@ downloads <- list(
         url = "https://bitbucket.org/djoumbou/biotransformer/get/master.zip",
         dest = "biotransformer_files.zip",
         destUnZip = ".",
-        sha256 = "89b840d1bb62aef53635bd17b5a963bb7d9fb1923bbeb05b73381903f50a8bc4",
+        sha256 = "a093dc67f00e1c76e156dd7038f71139ed0e11ce82e87495e89b0e4da8cb57ad",
         exclude = "BIOTRANSFORMER"
     )
 )
