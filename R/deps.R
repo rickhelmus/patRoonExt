@@ -19,7 +19,7 @@ depInfo <- function()
         ),
         data.frame(
             name = "SIRIUS",
-            version = "5.8.2",
+            version = "6.5.4",
             license = "SIRIUS: AGPL-3; CSI:FingerID: free for academic research/education",
             installation = "Download",
             OS = "Windows, Linux, macOS",

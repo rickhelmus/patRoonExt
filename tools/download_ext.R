@@ -25,7 +25,7 @@ downloads <- list(
     SIRIUS = list(
         url = sprintf("https://github.com/sirius-ms/sirius/releases/download/v6.5.4/sirius-6.5.4-%s-%s.zip",
                       switch(Sys.info()[["sysname"]], Windows = "win", Linux = "linux", Darwin = "macos"),
-                      if (Sys.info()[["machine"]] == "x86_64") "x64" else Sys.info()[["machine"]]),
+                      if (Sys.info()[["machine"]] %in% c("x86_64", "x86-64")) "x64" else Sys.info()[["machine"]]),
         dest = "sirius.zip",
         destUnZip = ".",
         sha256 = SIRHashes[[Sys.info()[["sysname"]]]][[Sys.info()[["machine"]]]],
